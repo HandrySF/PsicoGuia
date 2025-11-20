@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'register_screen.dart';
+import 'login_administrador.dart';
 import 'main_screen.dart'; // <--- AGREGA ESTO
 // import 'dashboard_screen.dart'; // Descomenta cuando tengas el dashboard listo
 
@@ -30,10 +31,22 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // 1. Logo (Cabeza con engranaje)
-                const Icon(
-                  Icons.psychology_alt, // Icono perfecto para tu logo
-                  size: 100,
-                  color: primaryBlue,
+                GestureDetector(
+                  onTap: () {
+                    // Navegar al Login de Administrador
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        // Asegúrate de que la clase dentro de tu archivo se llame 'LoginAdministrador'
+                        builder: (context) => const LoginAdministrador(),
+                      ),
+                    );
+                  },
+                  child: const Icon(
+                    Icons.psychology_alt,
+                    size: 100,
+                    color: primaryBlue, // Usando la variable que definiste arriba
+                  ),
                 ),
                 const SizedBox(height: 10),
 
